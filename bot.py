@@ -57,17 +57,17 @@ async def on_message(message):
         user_input = "happy birthday phrase"
         bot_response = get_chat_response(user_input)
         await message.channel.send(bot_response)
-    elif "bro" in message.content.lower():
-        user_input = message.content[6:]  # Remove '!chat ' from the message
-        user_input = "frat bro phrase"
-        bot_response = get_chat_response(user_input)
-        await message.channel.send(bot_response)
     elif "balls" in message.content.lower():
         # user_input = message.content[6:]  # Remove '!chat ' from the message
         # user_input = "make a random sentence which includes balls"
         # bot_response = get_chat_response(user_input)
         await message.channel.send(random.choice(['i\'m balls', 'Oy! Balls!', 'Balls!!!','I LOVE BALLS!!',
-                                                  'HUGE BALLS!']))
+                                                  'HUGE BALLS!']))    
+    elif "bro" in message.content.lower():
+        user_input = message.content[6:]  # Remove '!chat ' from the message
+        user_input = "frat bro phrase"
+        bot_response = get_chat_response(user_input)
+        await message.channel.send(bot_response)
     elif message.content.startswith("!chat"):
         user_input = message.content[6:]  # Remove '!chat ' from the message
         bot_response = get_chat_response(user_input)
