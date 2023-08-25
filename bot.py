@@ -2,6 +2,7 @@ import discord
 import os
 from dotenv import load_dotenv
 import openai
+import random
 # imports
 
 load_dotenv()
@@ -62,10 +63,11 @@ async def on_message(message):
         bot_response = get_chat_response(user_input)
         await message.channel.send(bot_response)
     elif "balls" in message.content.lower():
-        user_input = message.content[6:]  # Remove '!chat ' from the message
-        user_input = "make a coherent sentence with the word 'balls'"
-        bot_response = get_chat_response(user_input)
-        await message.channel.send(bot_response)
+        # user_input = message.content[6:]  # Remove '!chat ' from the message
+        # user_input = "make a random sentence which includes balls"
+        # bot_response = get_chat_response(user_input)
+        await message.channel.send(random.choice(['i\'m balls', 'Oy! Balls!', 'Balls!!!','I LOVE BALLS!!',
+                                                  'HUGE BALLS!']))
     elif message.content.startswith("!chat"):
         user_input = message.content[6:]  # Remove '!chat ' from the message
         bot_response = get_chat_response(user_input)
